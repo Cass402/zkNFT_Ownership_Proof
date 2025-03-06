@@ -1,0 +1,33 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t zkNFT:latest .
+
+      - name: Run Docker Compose
+        run: |
+          docker compose up --build -d
+          sleep 10
+          docker compose down
+
+      - name: Cleanups
+        run: |
+          docker system prune -f
+          docker volume prune -f
+          docker network prune -f
+          docker rmi -f zkNFT:latest
