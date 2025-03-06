@@ -1,0 +1,19 @@
+{
+  "name": "zknft_ownership_proof",
+  "version": "1.0.0",
+  "description": "A zk-SNARK based project that proves ownership of a NFT without revealing the owner.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.19"
+  }
+}
