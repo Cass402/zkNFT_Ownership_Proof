@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  # Defining the backend service (blockchain node and backend API)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: zkNFT-backend
+    # Mounting project directory
+    volumes:
+      - .:/app
+    # Exposing ports for the backend service
+    ports:
+      - "3000:3000"
+      - "8545:8545"
+    # Environment variables for the backend service
+    environment:
+      - NODE_ENV=development
+    # Setting the working directory
+    working_dir: /app
+    # Running a command after the container starts
+    command: /bin/bash -c "npm install && npm test"
+
+  # Defining the frontend service (Next.js frontend)
+#  frontend:
+#    build:
+#      context: ./src/frontend
+#      dockerfile: Dockerfile
+#
+#    container_name: zkNFT-frontend
+#    # Mounting project directory
+#    volumes:
+#      - ./src/frontend:/app
+#    # Exposing ports for the frontend service
+#    ports:
+#      - "8080:80"
+#    # Environment variables for the frontend service
+#    environment:
+#      - NODE_ENV=development
