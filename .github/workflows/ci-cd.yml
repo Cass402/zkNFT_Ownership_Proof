@@ -17,7 +17,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t zkNFT:latest .
+          docker build -t zknft:latest .
 
       - name: Run Docker Compose
         run: |
