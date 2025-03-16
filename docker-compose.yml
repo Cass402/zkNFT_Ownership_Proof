@@ -21,7 +21,7 @@ services:
     # Setting the working directory
     working_dir: /app
     # Running a command after the container starts
-    command: /bin/bash -c "npm install && npm test"
+    command: /app/entrypoint.sh
 
   # Defining the frontend service (Next.js frontend)
 #  frontend:

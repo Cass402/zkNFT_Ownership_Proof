@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "npx mocha tests/circuits/ownership.test.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,8 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.19"
+  },
+  "dependencies": {
+    "circomlibjs": "^0.1.7"
   }
 }
