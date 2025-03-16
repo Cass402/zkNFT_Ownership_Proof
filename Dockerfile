@@ -51,5 +51,11 @@ WORKDIR /app
 # Copy the local files to the container
 COPY . .
 
+# Ensure the keys directory exists
+RUN mkdir -p /app/keys
+
+# Copy the keys directory from the host to the container
+COPY keys/ownership_final.zkey /app/keys/ownership_final.zkey
+
 # Start a bash shell when the container runs
 CMD ["/bin/bash"]

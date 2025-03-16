@@ -1,2 +1,13 @@
 node_modules/
 package-lock.json
+keys/*
+!keys/ownership_final.zkey.gpg
+circuits/ownership.r1cs
+circuits/ownership.sym
+circuits/ownership_js/
+ownership_js/
+ownership.r1cs
+ownership.sym
+tests/circuits/*
+!tests/circuits/ownership.test.js
+!tests/circuits/verification_key.json
